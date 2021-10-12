@@ -2,17 +2,17 @@
 COLOR 3
 CLS
 FOR /F "tokens=1,2*" %%V IN ('bcdedit') DO SET adminTest=%%V
-	IF (%adminTest%)==(Žâª § ­®) GOTO errNoAdmin
+	IF (%adminTest%)==(Отказано) GOTO errNoAdmin
 	IF (%adminTest%)==(Access) GOTO errNoAdmin
 ECHO Desire.pro (FUCK#9803)
 ECHO.
-ECHO  -Žç¨áâª  ¦ãà­ «  è «ã­  :§
-ECHO  +1 - Žç¨áâª  ®á­®¢­ëå «®£®¢ ¢ à¥¥áâà¥.
-ECHO   +2 - Žç¨áâª  ¢á¥å «®£®¢ ¢ à¥¥áâà¥, ä ©«®¢ Perfect ¨ Minidump/Windows
-ECHO    +3 - Žç¨áâª  ¢á¥å «®£®¢, ä ©«®¢ Perfect, ¦ãà­ «®¢ Windows ¨ Last Activity View.
+ECHO  -Очистка журнала шалуна :з
+ECHO  +1 - Очистка основных логов в реестре.
+ECHO   +2 - Очистка всех логов в реестре, файлов Perfect и Minidump/Windows
+ECHO    +3 - Очистка всех логов, файлов Perfect, журналов Windows и Last Activity View.
 ECHO.
-ECHO  -®á«¥ ¢ë¡®à  ¯ã­ª , ­ ¦¬¨ ­  Enter!
-SET /p doset="‚ë¡¥à¨ ¯ã­ªâ: " 
+ECHO  -После выбора пунка, нажми на Enter!
+SET /p doset="Выбери пункт: " 
 ECHO.
 IF %doset% NEQ 1 (
 	IF %doset% NEQ 2 (
@@ -27,7 +27,9 @@ REG DELETE "HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCo
 REG DELETE "HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /va /f
 REG DELETE "HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Compatibility Assistant\Persisted" /va /f
 REG DELETE "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\AppSwitched" /va /f
-REG DELETE "HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU" /f
+REG DELETE "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist" /va /f
+REG DELETE "HKEY_CURRENT_USER\Software\Microsoft\Windows\ShellNoRoam" /va /f
+REG DELETE "HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU" /f 
 REG DELETE "HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags" /f
 REG DELETE "HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\BagMRU" /f
 REG DELETE "HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\Bags" /f
@@ -42,6 +44,16 @@ IF %doset% NEQ 1 (
 	REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\UserAssist"
 )
 REG DELETE "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\AppCompatCache" /va /f
+REG DELETE "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USBSTOR" /va /f
+REG DELETE "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\DeviceClasses\{53f56307-b6bf-11d0-94f2-00a0c91efb8b}" /va /f
+REG DELETE "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Control\DeviceClasses\{53f56307-b6bf-11d0-94f2-00a0c91efb8b}" /va /f
+REG DELETE "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\DeviceClasses\{53f56307-b6bf-11d0-94f2-00a0c91efb8b}" /va /f
+REG DELETE "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\UsbEStub" /va /f
+REG DELETE "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USB" /va /f
+REG DELETE "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Enum\USBSTOR" /va /f
+REG DELETE "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Enum\USBSTOR" /va /f
+REG DELETE "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Control\DeviceClasses" /va /f
+REG DELETE "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet003\Enum\USB" /va /f
 REG DELETE "HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\Session Manager\AppCompatCache" /va /f
 REG DELETE "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\RADAR\HeapLeakDetection\DiagnosedApplications" /f
 REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\RADAR\HeapLeakDetection\DiagnosedApplications"
@@ -77,12 +89,13 @@ IF %doset% NEQ 1 (
 ECHO.
 PAUSE
 EXIT
-:do_clear 
-ECHO [+] %1 
+:do_clear
+COLOR 2
+ECHO [+] %1
 wevtutil.exe cl %1
 GOTO :eof
 :errNoAdmin
 COLOR 2
-ECHO ¨¯ã¯-ã¯¨¯ [‡ ¯ãáâ¨ ®â ¨¬¥­¨  ¤¬¨­  BAKA :§]
+ECHO БипБуп-БупБип [Запусти от имени админа BAKA :з]
 ECHO.
 PAUSE
