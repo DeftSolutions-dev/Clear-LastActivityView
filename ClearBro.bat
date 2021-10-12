@@ -2,17 +2,17 @@
 COLOR 3
 CLS
 FOR /F "tokens=1,2*" %%V IN ('bcdedit') DO SET adminTest=%%V
-	IF (%adminTest%)==(βª § ­®) GOTO errNoAdmin
+	IF (%adminTest%)==(Ε½ΓΆΒªΒ Β§Β Β­Β®) GOTO errNoAdmin
 	IF (%adminTest%)==(Access) GOTO errNoAdmin
 ECHO Desire.pro (FUCK#9803)
 ECHO.
-ECHO  -η¨αβª  ¦γΰ­ «  θ «γ­  :§
-ECHO  +1 - η¨αβª  ®α­®Ά­λε «®£®Ά Ά ΰ¥¥αβΰ¥.
-ECHO   +2 - η¨αβª  Άα¥ε «®£®Ά Ά ΰ¥¥αβΰ¥, δ ©«®Ά Perfect ¨ Minidump/Windows
-ECHO    +3 - η¨αβª  Άα¥ε «®£®Ά, δ ©«®Ά Perfect, ¦γΰ­ «®Ά Windows ¨ Last Activity View.
+ECHO  -Ε½Γ§Β¨Γ΅ΓΆΒªΒ  Β¦Γ£Γ Β­Β Β«Β  Γ¨Β Β«Γ£Β­Β  :Β§
+ECHO  +1 - Ε½Γ§Β¨Γ΅ΓΆΒªΒ  Β®Γ΅Β­Β®ΒΆΒ­Γ«Γ¥ Β«Β®Β£Β®ΒΆ ΒΆ Γ Β¥Β¥Γ΅ΓΆΓ Β¥.
+ECHO   +2 - Ε½Γ§Β¨Γ΅ΓΆΒªΒ  ΒΆΓ΅Β¥Γ¥ Β«Β®Β£Β®ΒΆ ΒΆ Γ Β¥Β¥Γ΅ΓΆΓ Β¥, Γ¤Β Β©Β«Β®ΒΆ Perfect Β¨ Minidump/Windows
+ECHO    +3 - Ε½Γ§Β¨Γ΅ΓΆΒªΒ  ΒΆΓ΅Β¥Γ¥ Β«Β®Β£Β®ΒΆ, Γ¤Β Β©Β«Β®ΒΆ Perfect, Β¦Γ£Γ Β­Β Β«Β®ΒΆ Windows Β¨ Last Activity View.
 ECHO.
-ECHO  -®α«¥ Άλ΅®ΰ  ―γ­ª , ­ ¦¬¨ ­  Enter!
-SET /p doset="‚λ΅¥ΰ¨ ―γ­ªβ: " 
+ECHO  -ΒΒ®Γ΅Β«Β¥ ΒΆΓ«Β΅Β®Γ Β  Β―Γ£Β­ΒªΒ , Β­Β Β¦Β¬Β¨ Β­Β  Enter!
+SET /p doset="β€Γ«Β΅Β¥Γ Β¨ Β―Γ£Β­ΒªΓΆ: " 
 ECHO.
 IF %doset% NEQ 1 (
 	IF %doset% NEQ 2 (
@@ -23,6 +23,10 @@ IF %doset% EQU 3 (
 	FOR /F "tokens=*" %%G in ('wevtutil.exe el') DO (call :do_clear "%%G")
 )
 REG DELETE "HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\MuiCache" /va /f
+REG DELETE "HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Compatibility Assistant\Store" /va /f
+REG DELETE "HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Layers" /va /f
+REG DELETE "HKEY_CURRENT_USER\Software\Microsoft\Windows NT\CurrentVersion\AppCompatFlags\Compatibility Assistant\Persisted" /va /f
+REG DELETE "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\FeatureUsage\AppSwitched" /va /f
 REG DELETE "HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\BagMRU" /f
 REG DELETE "HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags" /f
 REG DELETE "HKEY_CURRENT_USER\Software\Microsoft\Windows\Shell\BagMRU" /f
@@ -79,6 +83,6 @@ wevtutil.exe cl %1
 GOTO :eof
 :errNoAdmin
 COLOR 2
-ECHO ¨―γ―-γ―¨― [‡ ―γαβ¨ ®β ¨¬¥­¨  ¤¬¨­  BAKA :§]
+ECHO ΒΒ¨Β―ΒΓ£Β―-ΒΓ£Β―ΒΒ¨Β― [β€΅Β Β―Γ£Γ΅ΓΆΒ¨ Β®ΓΆ Β¨Β¬Β¥Β­Β¨ Β Β¤Β¬Β¨Β­Β  BAKA :Β§]
 ECHO.
 PAUSE
