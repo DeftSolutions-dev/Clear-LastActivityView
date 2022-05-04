@@ -2,14 +2,14 @@
 COLOR 3
 CLS
 FOR /F "tokens=1,2*" %%V IN ('bcdedit') DO SET adminTest=%%V
-	IF (%adminTest%)==(ЋвЄ § ­®) GOTO errNoAdmin
+	IF (%adminTest%)==(Отказано) GOTO errNoAdmin
 	IF (%adminTest%)==(Access) GOTO errNoAdmin
 ECHO Desire.pro (FUCK#9803)
 ECHO.
-ECHO  -ЋзЁбвЄ  ¦га­ «  и «г­  :§
-ECHO  +1 - ЋзЁбвЄ  ®б­®ў­ле «®Ј®ў ў аҐҐбваҐ.
-ECHO   +2 - ЋзЁбвЄ  ўбҐе «®Ј®ў ў аҐҐбваҐ, д ©«®ў Perfect Ё Minidump/Windows
-ECHO    +3 - ЋзЁбвЄ  ўбҐе «®Ј®ў, д ©«®ў Perfect, ¦га­ «®ў Windows Ё Last Activity View.
+ECHO  -Очистка журнала шалуна :з
+ECHO  +1 - Очистка основных логов в реестре.
+ECHO   +2 - Очистка всех логов в реестре, файлов Perfect и Minidump/Windows
+ECHO    +3 - Очистка всех логов, файлов Perfect, журналов Windows и Last Activity View.
 ECHO.
 ECHO  -Џ®б«Ґ ўлЎ®а  Їг­Є , ­ ¦¬Ё ­  Enter!
 SET /p doset="‚лЎҐаЁ Їг­Єв: " 
@@ -96,6 +96,6 @@ wevtutil.exe cl %1
 GOTO :eof
 :errNoAdmin
 COLOR 2
-ECHO ЃЁЇЃгЇ-ЃгЇЃЁЇ [‡ ЇгбвЁ ®в Ё¬Ґ­Ё  ¤¬Ё­  BAKA :§]
+O БипБуп-БупБип [Запусти от имени админа BAKA :з]
 ECHO.
 PAUSE
