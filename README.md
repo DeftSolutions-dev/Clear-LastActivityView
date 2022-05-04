@@ -4,7 +4,7 @@ History Clear's = PreviousFilesRecovery, CachedProgramsList, UserAssistView, She
 
 Инструкция как сохранить файл в формате DOS-866, что бы он не работал через одно место. 
 
-1. Скачиваем - [<img src="https://unetway.com/uploads/soft/1d/35/af/1d35aff8f92904eadea5541d78b8caf3.png" alt='AkelPad' height="25px">](https://sourceforge.net/projects/akelpad/)  
+1. Скачиваем - [<img src="https://unetway.com/uploads/soft/1d/35/af/1d35aff8f92904eadea5541d78b8caf3.png" alt='AkelPad' height="100px">](https://sourceforge.net/projects/akelpad/)  
 2. После устанавливаем как вам угодно. 
 3. Нажимаем право кнопкой мыши по файлу, и нажимаем >Изменить.
 ![image](https://user-images.githubusercontent.com/59990384/166839831-45f40b1c-f8e8-4a39-8eff-b5d3db271d92.png)
